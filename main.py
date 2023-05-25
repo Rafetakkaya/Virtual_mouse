@@ -49,7 +49,7 @@ def mouse():
                         cv2.circle(image,(x,y),10,(0,0,255))#kırmızı
                         z1=x
                         z2=y
-                        
+
                         
                     if id==13:
                         cv2.circle(image,(x,y),10,(0,0,0))#kırmızı
@@ -59,7 +59,7 @@ def mouse():
                         cv2.circle(image,(x,y),10,(0,0,0))#kırmızı
                         b1=x
                         b2=y
-                        
+
                         
                         
                         
@@ -67,15 +67,15 @@ def mouse():
                         cv2.circle(image,(x,y),60,(0,20,0))
                         
                         
-                        
+
                     if id==27:
                         cv2.circle(image,(x,y),80,(0,10,0))
                     
                         
                         
-            # dist = y2-y1
-            # if(dist<45):
-            #     pyautogui.click()
+            dist = y2-y1
+            if(dist<45):
+                pyautogui.click()
             # dist2 = z2-y1
             # print(dist2)
             # if(dist2>-15):
@@ -84,12 +84,12 @@ def mouse():
                 
                 
                 
-            dist3 = b2-y1
-            if(dist3>10):
-                print(dist3)
-                # pyautogui.rightClick()
-                pyautogui.press('esc')
-            
+#             dist3 = b2-y1
+#             if(dist3>10):
+#                 print(dist3)
+#                 # pyautogui.rightClick()
+#                 pyautogui.press('esc')
+#
         
             
         
