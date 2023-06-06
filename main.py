@@ -27,50 +27,49 @@ def mouse():
                     x=int(lm.x*image_width)
                     y=int(lm.y*image_height)
                     # print(x,y)
-                    if id==5:
-                        cv2.circle(image,(x,y),10,(0,255,255))
+                    if id==8:
+                        cv2.circle(image,(x,y),10,(0,255,255))#sarı renk ve mouse hareketi işaret parmak
                         mouse_x=int(screen_width/image_width * x)
                         mouse_y=int(screen_height/image_height * y)
                     
                     
                         pyautogui.moveTo(mouse_x,mouse_y)
-                    if id == 8:
-                        cv2.circle(image,(x,y),10,(0,255,255))#sarı
-
-                        x1=x
-                        y1=y
+                  
                     
                     if id == 4:
-                        cv2.circle(image,(x,y),10,(0,255,0))#yeşil
+                        cv2.circle(image,(x,y),10,(0,255,0))#yeşil birinci parmak
+                        
                         x2=x
                         y2=y
                         
+                        
+                    if id == 8:
+                        cv2.circle(image,(x,y),10,(0,255,255))#sarı  işaret  parmak
+
+                        x1=x
+                        y1=y
+                        
                     if id==12:
-                        cv2.circle(image,(x,y),10,(0,0,255))#kırmızı
+                        cv2.circle(image,(x,y),10,(139,69,19))#mavi orta parmak
+                       
                         z1=x
                         z2=y
 
                         
-                    if id==13:
-                        cv2.circle(image,(x,y),10,(0,0,0))#kırmızı
+                    if id==16:
+                        cv2.circle(image,(x,y),10,(0,0,255))#kırmızı orta parmak
+                        
                         a1=x
                         a2=y
-                    if id==16:
-                        cv2.circle(image,(x,y),10,(0,0,0))#kırmızı
+                        
+                    if id==20:
+                        cv2.circle(image,(x,y),10,(0 ,0 ,0))#siyah beşinci parmak
                         b1=x
                         b2=y
 
                         
                         
-                        
-                    if id==26:
-                        cv2.circle(image,(x,y),60,(0,20,0))
-                        
-                        
-
-                    if id==27:
-                        cv2.circle(image,(x,y),80,(0,10,0))
-                    
+                 
                         
                         
             dist = y2-y1

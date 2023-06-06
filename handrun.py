@@ -1,4 +1,6 @@
-import drawer
 
+# import main
+import drawer
 drawer.play_game()
-# pyquit gelecek
+
+# main.mouse()
