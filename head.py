@@ -34,6 +34,8 @@ def mouse():
                         cv2.circle(image,(x,y),10,(0,255,255))#sarı renk ve mouse hareketi işaret parmak
                         mouse_x=int(screen_width/image_width * x)
                         mouse_y=int(screen_height/image_height * y)
+                    
+                    
                         pyautogui.moveTo(mouse_x,mouse_y)
                   
                     
@@ -70,24 +72,23 @@ def mouse():
                            
             dist = y2-y1
           
-            if(dist<20):
-                pyautogui.rightClick()
+            if(dist<200):
+                pyautogui.screenshot('screenshot1.png') 
+                #o esnadaki yerin fotosunu çeker ve projenin içeisinde ana dizine atar
                 
 
 
             dist2 = y2-y3
             if(dist2<20):
-                pyautogui.click()
+                pyautogui.doubleClick(mouse_x, mouse_y)
         
                 
             dist3 = y2-y4
-            print(dist3)
             if(dist3<30):
-                pyautogui.mouseDown()
+                pyautogui.press("esc")
 
         
-           
-        
+     
                 
         cv2.imshow("Hand Movement video Capture",image)
         key=cv2.waitKey(100)
@@ -95,3 +96,5 @@ def mouse():
             break
     camera.release()
     cv2.destroyAllWindows()
+
+
