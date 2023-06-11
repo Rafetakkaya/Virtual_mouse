@@ -35,7 +35,7 @@ def mouse():
                     x = int(lm.x * image_width)
                     y = int(lm.y * image_height)
 
-                    if id == 5:
+                    if id == 8:
                         cv2.circle(image, (x, y), 10, (0, 255, 255))
                         mouse_x = int(screen_width / image_width * x)
                         mouse_y = int(screen_height / image_height * y)
@@ -44,11 +44,10 @@ def mouse():
                         global prev_x, prev_y
                         if prev_x != 0 and prev_y != 0:
                             cv2.line(canvas, (prev_x, prev_y), (mouse_x, mouse_y), (0, 0, 255), 5)
-
                         prev_x = mouse_x
                         prev_y = mouse_y
-
                         pyautogui.moveTo(mouse_x, mouse_y)
+                  
 
         # Overlay the canvas on top of the camera feed
         overlay = cv2.addWeighted(image, 1, canvas, 0.5, 0)

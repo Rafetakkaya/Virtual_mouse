@@ -11,6 +11,9 @@ def mouse():
     screen_width,screen_height= pyautogui.size()
     camera = cv2.VideoCapture(0)
     x1=y1=x2=y2=z1=z2=a1=b1=a2=b2=0
+    # x1=x2=x3=x4=y1=y2=y3=y4=0
+
+
     while True:
         _,image=camera.read()
 
@@ -46,51 +49,48 @@ def mouse():
                     if id == 8:
                         cv2.circle(image,(x,y),10,(0,255,255))#sarı  işaret  parmak
 
-                        x1=x
-                        y1=y
+                        # x1=x
+                        # y1=y
                         
                     if id==12:
                         cv2.circle(image,(x,y),10,(139,69,19))#mavi orta parmak
-                       
-                        z1=x
-                        z2=y
-
+                        x1=x
+                        y1=y
+                     
                         
                     if id==16:
-                        cv2.circle(image,(x,y),10,(0,0,255))#kırmızı orta parmak
-                        
-                        a1=x
-                        a2=y
+                        cv2.circle(image,(x,y),10,(0,0,255))#kırmızı dördüncü parmak
+                        x3=x
+                        y3=y
+
+                      
                         
                     if id==20:
                         cv2.circle(image,(x,y),10,(0 ,0 ,0))#siyah beşinci parmak
-                        b1=x
-                        b2=y
-
-                        
-                        
-                 
-                        
-                        
+                        x4=x
+                        y4=y
+                           
             dist = y2-y1
-            if(dist<45):
+          
+            if(dist<20):
+                pyautogui.rightClick()
+                
+
+
+            dist2 = y2-y3
+            if(dist2<20):
                 pyautogui.click()
-            # dist2 = z2-y1
-            # print(dist2)
-            # if(dist2>-15):
-            #     pyautogui.mouseDown()
         
                 
-                
-                
-#             dist3 = b2-y1
-#             if(dist3>10):
-#                 print(dist3)
-#                 # pyautogui.rightClick()
-#                 pyautogui.press('esc')
-#
+            dist3 = y2-y4
+            print(dist3)
+            if(dist3<30):
+              
+          
+                pyautogui.mouseDown()
+
         
-            
+           
         
                 
         cv2.imshow("Hand Movement video Capture",image)
